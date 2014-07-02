@@ -1,0 +1,38 @@
+NAME
+    Complete::Fish - Completion module for Fish shell
+
+VERSION
+    This document describes version 0.00 of Complete::Fish (from Perl
+    distribution Complete-Fish), released on 2014-07-02.
+
+DESCRIPTION
+    Not yet implemented. Land grab :)
+
+SEE ALSO
+    As far as I know, at the time of this writing, there's currently no CPAN
+    modules related to fish shell, let alone fish tab completion.
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Complete-Fish>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/sharyanto/perl-Complete-Fish>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Complete-Fish>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

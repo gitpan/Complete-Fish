@@ -10,8 +10,8 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Completion module for Fish shell",
-  "AUTHOR" => "Steven Haryanto <stevenharyanto\@gmail.com>",
+  "ABSTRACT" => "Completion module for fish shell",
+  "AUTHOR" => "perlancar <perlancar\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -19,14 +19,16 @@ my %WriteMakefileArgs = (
   "EXE_FILES" => [],
   "LICENSE" => "perl",
   "NAME" => "Complete::Fish",
-  "PREREQ_PM" => {},
+  "PREREQ_PM" => {
+    "Complete::Bash" => "0.12"
+  },
   "TEST_REQUIRES" => {
     "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.00",
+  "VERSION" => "0.01",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -34,6 +36,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Complete::Bash" => "0.12",
   "File::Spec" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,

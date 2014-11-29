@@ -1,16 +1,56 @@
 NAME
-    Complete::Fish - Completion module for Fish shell
+    Complete::Fish - Completion module for fish shell
 
 VERSION
-    This document describes version 0.00 of Complete::Fish (from Perl
-    distribution Complete-Fish), released on 2014-07-02.
+    This document describes version 0.01 of Complete::Fish (from Perl
+    distribution Complete-Fish), released on 2014-11-29.
 
 DESCRIPTION
-    Not yet implemented. Land grab :)
+    fish allows completion of option arguments to come from an external
+    command, e.g.:
 
+     % complete -c deluser -l user -d Username -a "(cat /etc/passwd|cut -d : -f 1)"
+
+    The command is supposed to return completion entries one in a separate
+    line. Description for each entry can be added, prefixed with a tab
+    character. The provided function "format_completion()" accept a
+    completion answer structure and format it for fish. Example:
+
+     format_completion(["a", "b", {word=>"c", description=>"Another letter"}])
+
+    will result in:
+
+     a
+     b
+     c       Another letter
+
+FUNCTIONS
+  format_completion($completion) -> array|str
+    Format completion for output (for shell).
+
+    fish accepts completion reply in the form of one entry per line to
+    STDOUT. Description can be added to each entry, prefixed by tab
+    character.
+
+    Arguments ('*' denotes required arguments):
+
+    *   completion* => *array|hash*
+
+        Completion answer structure.
+
+        Either an array or hash, as described in "Complete".
+
+    Return value:
+
+    Formatted string (or array, if `as` key is set to `array`) (any)
+
+TODOS
 SEE ALSO
-    As far as I know, at the time of this writing, there's currently no CPAN
-    modules related to fish shell, let alone fish tab completion.
+    Complete
+
+    Complete::Bash
+
+    Fish manual.
 
 HOMEPAGE
     Please visit the project's homepage at
@@ -28,10 +68,10 @@ BUGS
     to an existing test-file that illustrates the bug or desired feature.
 
 AUTHOR
-    Steven Haryanto <stevenharyanto@gmail.com>
+    perlancar <perlancar@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Steven Haryanto.
+    This software is copyright (c) 2014 by perlancar@cpan.org.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

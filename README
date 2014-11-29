@@ -2,7 +2,7 @@ NAME
     Complete::Fish - Completion module for fish shell
 
 VERSION
-    This document describes version 0.02 of Complete::Fish (from Perl
+    This document describes version 0.03 of Complete::Fish (from Perl
     distribution Complete-Fish), released on 2014-11-29.
 
 DESCRIPTION
@@ -43,6 +43,33 @@ FUNCTIONS
     Return value:
 
     Formatted string (or array, if `as` key is set to `array`) (any)
+
+  parse_cmdline($cmdline) -> array
+    Parse shell command-line for processing by completion routines.
+
+    This function converts COMMAND_LINE (str) given by tcsh to become
+    something like COMP_WORDS (array) and COMP_CWORD (int), like what bash
+    supplies to shell functions. Currently implemented using
+    "Complete::Bash"'s "parse_cmdline".
+
+    Arguments ('*' denotes required arguments):
+
+    *   cmdline => *str*
+
+        Command-line, defaults to COMMAND_LINE environment.
+
+    Return value:
+
+     (array)
+
+    Return a 2-element array: "[$words, $cword]". $words is array of str,
+    equivalent to "COMP_WORDS" provided by bash to shell functions. $cword
+    is an integer, equivalent to "COMP_CWORD" provided by bash to shell
+    functions. The word to be completed is at "$words->[$cword]".
+
+    Note that COMP_LINE includes the command name. If you want the
+    command-line arguments only (like in @ARGV), you need to strip the first
+    element from $words and reduce $cword by 1.
 
 TODOS
 SEE ALSO

@@ -9,7 +9,7 @@ use Complete::Fish qw(format_completion);
 use Test::More;
 
 subtest "accepts array of str" => sub {
-    is(format_completion([qw/a b c/]), "a\nb\nc\n");
+    is(format_completion([qw/a b c/]), "a\t\nb\t\nc\t\n");
 };
 
 subtest "accepts array of hashref" => sub {

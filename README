@@ -2,7 +2,7 @@ NAME
     Complete::Fish - Completion module for fish shell
 
 VERSION
-    This document describes version 0.01 of Complete::Fish (from Perl
+    This document describes version 0.02 of Complete::Fish (from Perl
     distribution Complete-Fish), released on 2014-11-29.
 
 DESCRIPTION
